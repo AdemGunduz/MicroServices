@@ -4,3 +4,4 @@ identityServer :5001
 
 catalogApi :5011
 photoStock :5012
+basket :5013
