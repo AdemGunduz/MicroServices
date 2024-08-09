@@ -26,7 +26,7 @@ namespace Course.Shread.Services
                     throw new InvalidOperationException("HttpContext or User is null.");
                 }
 
-                // "sub" claim yerine "nameidentifier" claim'ini kullanın
+         
                 var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier);
                 if (userIdClaim == null)
                 {
