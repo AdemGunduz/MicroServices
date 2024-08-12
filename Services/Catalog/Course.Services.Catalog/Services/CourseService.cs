@@ -44,7 +44,7 @@ namespace Course.Services.Catalog.Services
             {
                 courses = new List<Coursec>();
             }
-            return Response<List<CourseDto>>.Succes(_mapper.Map<List<CourseDto>>(courses),200);
+            return Response<List<CourseDto>>.Success(_mapper.Map<List<CourseDto>>(courses),200);
             }
             
 
@@ -58,7 +58,7 @@ namespace Course.Services.Catalog.Services
             }
             course.Category = await _category.Find<Category>(x =>x.Id == course.CategoryId).FirstAsync();
 
-            return Response<CourseDto>.Succes(_mapper.Map<CourseDto>(course),200);
+            return Response<CourseDto>.Success(_mapper.Map<CourseDto>(course),200);
         }
 
 
@@ -77,7 +77,7 @@ namespace Course.Services.Catalog.Services
             {
                 courses = new List<Coursec>();
             }
-            return Response<List<CourseDto>>.Succes(_mapper.Map<List<CourseDto>>(courses), 200);
+            return Response<List<CourseDto>>.Success(_mapper.Map<List<CourseDto>>(courses), 200);
         }
 
 
@@ -88,7 +88,7 @@ namespace Course.Services.Catalog.Services
             newCourse.CreatedTime = DateTime.Now;
             await _course.InsertOneAsync(newCourse);
 
-            return Response<CourseDto>.Succes(_mapper.Map<CourseDto>(newCourse),200);
+            return Response<CourseDto>.Success(_mapper.Map<CourseDto>(newCourse),200);
         }
 
         public async Task<Response<NoContent>> UpdateAsync(CourseUpdateDto courseUpdateDto)
@@ -103,7 +103,7 @@ namespace Course.Services.Catalog.Services
 
             }
 
-            return Response<NoContent>.Succes(204);
+            return Response<NoContent>.Success(204);
         }
 
 
@@ -113,7 +113,7 @@ namespace Course.Services.Catalog.Services
 
             if (result.DeletedCount > 0)
             {
-                return Response<NoContent>.Succes(204);
+                return Response<NoContent>.Success(204);
 
             }
             else

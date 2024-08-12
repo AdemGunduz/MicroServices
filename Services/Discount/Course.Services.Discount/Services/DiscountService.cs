@@ -20,14 +20,14 @@ namespace Course.Services.Discount.Services
         {
             var status = await _dbConnection.ExecuteAsync("delete from discount where id =@Id" , new { Id = id });
 
-            return status > 0 ? Response<NoContent>.Succes(204) : Response<NoContent>.Fail("Discount not found", 404);
+            return status > 0 ? Response<NoContent>.Success(204) : Response<NoContent>.Fail("Discount not found", 404);
         }
 
         public async Task<Response<List<Models.Discount>>> GetAll()
         {
             var discounts = await _dbConnection.QueryAsync<Models.Discount>("Select * from discount");
 
-            return Response<List<Models.Discount>>.Succes(discounts.ToList(), 200);
+            return Response<List<Models.Discount>>.Success(discounts.ToList(), 200);
         }
 
         public async Task<Response<Models.Discount>> GetByCodeAndUserId(string code, string userId)
@@ -41,7 +41,7 @@ namespace Course.Services.Discount.Services
                 return Response<Models.Discount>.Fail("Discount not found", 404);
             }
 
-            return Response<Models.Discount>.Succes(hasDiscount, 200);
+            return Response<Models.Discount>.Success(hasDiscount, 200);
         }
 
         public async Task<Response<Models.Discount>> GetById(int id)
@@ -53,7 +53,7 @@ namespace Course.Services.Discount.Services
                 return Response<Models.Discount>.Fail("Discount not found", 400);
             }
 
-            return Response<Models.Discount>.Succes(discount, 200);
+            return Response<Models.Discount>.Success(discount, 200);
         }
 
         public async Task<Response<NoContent>> Save(Models.Discount discount)
@@ -62,7 +62,7 @@ namespace Course.Services.Discount.Services
 
             if (saveStatus >0)
             {
-                return Response<NoContent>.Succes(204);
+                return Response<NoContent>.Success(204);
             }
 
             return Response<NoContent>.Fail("an error accured while adding", 500);
@@ -76,7 +76,7 @@ namespace Course.Services.Discount.Services
 
             if (status > 0)
             {
-                return Response<NoContent>.Succes(204);
+                return Response<NoContent>.Success(204);
             }
 
             return Response<NoContent>.Fail("Discount not found", 404);

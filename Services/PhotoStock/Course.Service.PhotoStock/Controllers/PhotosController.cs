@@ -28,7 +28,7 @@ namespace Course.Service.PhotoStock.Controllers
 
                PhotoDto photoDto = new() { Url = returnPath };
 
-                return CreateActionResultInstance(Response<PhotoDto>.Succes(photoDto, 200));
+                return CreateActionResultInstance(Response<PhotoDto>.Success(photoDto, 200));
 
             }
 
@@ -48,7 +48,7 @@ namespace Course.Service.PhotoStock.Controllers
 
             System.IO.File.Delete(path);
 
-            return CreateActionResultInstance(Response<NoContent>.Succes(204));
+            return CreateActionResultInstance(Response<NoContent>.Success(204));
         }
 
     }

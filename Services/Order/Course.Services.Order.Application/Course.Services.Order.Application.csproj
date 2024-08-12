@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Course.Shread\Course.Shread.csproj" />
+    <ProjectReference Include="..\Course.Services.Order.Domain\Course.Services.Order.Domain.csproj" />
+    <ProjectReference Include="..\Course.Services.Order.Infrastructure\Course.Services.Order.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
