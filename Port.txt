@@ -7,3 +7,4 @@ photoStock :5012
 basket :5013
 basket :5014
 order :5015
+fakePayment :5016
